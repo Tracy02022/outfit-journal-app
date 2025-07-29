@@ -1,37 +1,18 @@
-# outfit-journal-app
+# 👗 Outfit Journal App
 
-outfit-journal-app/
-├── app/                 # App Router 页面目录
-│   ├── home/            # 首页（展示主Look + Journal）
-│   ├── journal/         # Outfit Journal列表页
-│   ├── cart/            # 购物车页
-│   ├── me/              # 个人中心页
-│   ├── upload/          # 上传页面（仅 admin 可见）
-│   └── layout.tsx       # 全局布局（可加底部 TabBar）
-│
-├── components/          # 可复用 UI组件
-│   ├── OutfitCard.tsx
-│   ├── NavBar.tsx
-│   ├── ItemModal.tsx
-│   └── UserAvatar.tsx
-│
-├── lib/                 # 工具 & Firebase 初始化
-│   ├── firebase.ts
-│   └── utils.ts
-│
-├── public/              # 图片 & 静态资源
-│   ├── avatar.jpg
-│   ├── look-of-day.jpg
-│   ├── outfit1.jpg
-│   └── outfit2.jpg
-│
-├── styles/              # 自定义全局样式
-│   └── globals.css
-│
-├── .gitignore
-├── README.md
-├── tailwind.config.js
-├── postcss.config.js
-├── tsconfig.json
-├── package.json
-└── next.config.js
+A personal style diary and shoppable fashion journal — designed to help you express your mood, outfit, and lifestyle in an aesthetic and thoughtful way.
+
+---
+
+## 🌟 Features
+
+- 🧥 **Look of the Day**: Highlight your daily mood and style
+- 📔 **Outfit Journal**: Chronological entries with photos, mood tags, and outfit notes
+- 🛍️ **Buy the Look**: Add item details (image, price, tags), and enable shopping
+- 👩‍💻 **Admin Upload Mode**: You can upload outfits and manage items via a dedicated upload panel
+- 📱 **Mobile-first UI**: Soft magazine-like interface with elegant typography and tone
+
+---
+
+## 🧭 Project Structure
+
