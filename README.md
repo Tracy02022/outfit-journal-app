@@ -15,4 +15,6 @@ A personal style diary and shoppable fashion journal — designed to help you ex
 ---
 
 ## 🧭 Project Structure
+<details>
+<summary>Click to view folder structure</summary>
 
