@@ -1,77 +1,59 @@
 // app/home/page.tsx
-'use client'
-
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { format } from 'date-fns'
-import { OutfitCard } from '@/components/OutfitCard'
 
 export default function HomePage() {
-  const [today, setToday] = useState('')
-  const router = useRouter()
-
-  useEffect(() => {
-    const now = new Date()
-    const formatted = format(now, 'MMMM dd, yyyy')
-    setToday(formatted)
-  }, [])
-
   return (
-    <main className="min-h-screen bg-[#f8f5ef] text-[#322c28] p-4 font-serif">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <span className="text-sm">Tracy</span>
+    <main className="bg-[#f8f5f0] min-h-screen p-4 md:p-8 text-[#2c2c2c] font-serif">
+
+      {/* 顶部信息 */}
+      <div className="flex items-center justify-between text-sm mb-2">
+        <span>Tracy</span>
         <div className="w-8 h-8 rounded-full overflow-hidden">
           <Image src="/avatar.jpg" alt="Avatar" width={32} height={32} />
         </div>
-        <span className="text-sm">{today}</span>
+        <span>July 29, 2024</span>
       </div>
 
-      {/* Title */}
-      <div className="text-center mb-6">
-        <h1 className="text-3xl italic font-medium leading-snug">
-          Dressing <span className="not-italic font-semibold">in</span>
-          <br /> Beige <span className="italic font-semibold">Tones</span>
-        </h1>
+      {/* 标题部分 */}
+      <div className="text-center my-2">
+        <h1 className="text-3xl italic font-light">Dressing <span className="font-semibold not-italic">in</span></h1>
+        <h2 className="text-4xl italic font-bold">Beige Tones</h2>
       </div>
 
-      {/* Look of the Day */}
-      <div className="flex flex-col md:flex-row md:gap-6 mb-10">
-        <Image
-          src="/look-of-day.jpg"
-          alt="Look of the Day"
-          width={500}
-          height={600}
-          className="rounded-xl object-cover"
-        />
-        <div className="mt-4 md:mt-0 md:w-[40%]">
-          <p className="uppercase text-xs tracking-widest mb-2 text-gray-500">
-            Look of the Day
-          </p>
-          <h2 className="text-xl font-semibold mb-2">Minimalist</h2>
-          <p className="text-sm text-gray-700">
-            Tried out low-saturation beige today. Feels really calming.
-          </p>
+      {/* 照片 + Look 文本 */}
+      <div className="md:flex items-start gap-6 my-6">
+        <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
+          <Image
+            src="/look-of-day.jpg"
+            alt="Look of the Day"
+            width={600}
+            height={800}
+            className="object-cover w-full h-auto"
+          />
+        </div>
+        <div className="md:w-1/2 mt-4 md:mt-0 text-left text-sm leading-relaxed">
+          <h3 className="uppercase text-xs tracking-wide mb-2">Look of the Day</h3>
+          <p className="text-lg font-semibold">Minimalist</p>
+          <p className="mt-2">Tried out low-saturation beige today. Feels really calming.</p>
         </div>
       </div>
 
-      {/* Outfit Journal Section */}
-      <section>
-        <h3 className="text-lg font-semibold mb-3 uppercase">Outfit Journal</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <OutfitCard
-            date="4.08.2024"
-            image="/outfit1.jpg"
-            tags={['#chocolate-brown']}
-          />
-          <OutfitCard
-            date="4.08.2024"
-            image="/outfit2.jpg"
-            tags={['#Soft-Pastel']}
-          />
+      {/* Outfit Journal 标题 */}
+      <h3 className="uppercase text-sm font-bold tracking-wide mt-8 mb-4">Outfit Journal</h3>
+
+      {/* OutfitCard 网格（你已有 OutfitCard 组件可插入） */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* example */}
+        <div>
+          <Image src="/outfit1.jpg" alt="outfit1" width={600} height={600} className="rounded-xl" />
+          <p className="text-xs mt-1 text-gray-600">4.08.2024</p>
         </div>
-      </section>
+        <div>
+          <Image src="/outfit2.jpg" alt="outfit2" width={600} height={600} className="rounded-xl" />
+          <p className="text-xs mt-1 text-gray-600">4.08.2024</p>
+        </div>
+      </div>
+
     </main>
   )
 }
