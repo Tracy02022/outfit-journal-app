@@ -2,8 +2,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ['var(--font-title)'],
-        body: ['var(--font-body)'],
+        quicksand: ['var(--font-quicksand)'],
+        dancing: ['var(--font-dancing-script)'],
       },
     },
   },
